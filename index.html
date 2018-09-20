@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<form>
+<label for="url">URL</label>
+<input type="url" id="url" />
+<button>Open</button>
+</form>
+
+<script>
+const formEl = document.querySelector('form');
+const inputEl = document.querySelector('#url');
+
+formEl.addEventListener('submit', (event) => {
+	event.preventDefault;
+	
+	const url = inputEl.value;
+	console.log('url', url);
+
+
+	const hash = url.split('#')[1];
+
+const urlWithHash = `http://127.0.0.1:3030/pair/supp?access_type=offline&client_id=abf993ed3419f034&redirect_uri=http%3A%2F%2F127.0.0.1%3A8081%2Foauth%2Fcode&scope=profile%20https%3A%2F%2Fidentity.mozilla.com%2Fapps%2Foldsync&state=VnlWXbuDL9PAZdmr&response_type=code&code_challenge_method=S256&code_challenge=1_63F3F5tE886-_BXvH1ZfXCsZncr8iSmZO7htwuUjQ&keys_jwk=eyJrdHkiOiJFQyIsImtpZCI6IjZVeVpCd1d3UXZVUHgxWXEyUmRPTGdsVk5oODFBLTRIS3dSS2FIdFlhdWMiLCJjcnYiOiJQLTI1NiIsIngiOiJzNmZLSERaNjR5dDNXcWdTT1BUamp2SVcweHZIZHdUUEd4Q2NTU29pQjJFIiwieSI6IkdjMW56NERxbkxOVXlFUlVaN1owZWEzS19oNnBYSUFUN01NN1F6Yi1nUjAifQ#${hash}`;
+	window.open(urlWithHash);
+}
+
+, false);
+</script>
+
+</html>
+
